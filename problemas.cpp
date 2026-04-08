@@ -101,8 +101,56 @@ void problema4()
     cout << "  Número convertido: " << numero << "\n";
 }
 
-void problema6(){}
-void problema8(){}
+
+//  PROBLEMA 6
+//  Recibir una cadena y convertir las letras minúsculas a
+//  mayúsculas; los demás caracteres permanecen igual.
+// ============================================================
+void problema6()
+{
+    char original[TAM_CADENA];
+    char convertida[TAM_CADENA];
+
+    leerCadena("\n  Ingrese una cadena de texto: ", original, TAM_CADENA);
+
+    int len = (int)strlen(original);
+    for (int i = 0; i <= len; i++) {           // <= para copiar '\0'
+        if (original[i] >= 'a' && original[i] <= 'z')
+            convertida[i] = (char)(original[i] - 32);
+        else
+            convertida[i] = original[i];
+    }
+
+    cout << "  Original     : " << original   << "\n";
+    cout << "  En mayúscula : " << convertida << "\n";
+}
+
+//  PROBLEMA 8
+//  Separar los dígitos del resto de caracteres en una cadena,
+//  generando dos cadenas: una sin números y otra sólo con ellos.
+// ============================================================
+void problema8()
+{
+    char original[TAM_CADENA];
+    char soloTexto[TAM_CADENA];
+    char soloNumeros[TAM_CADENA];
+
+    leerCadena("\n  Ingrese una cadena de texto: ", original, TAM_CADENA);
+
+    int it = 0, in = 0;
+    for (int i = 0; original[i] != '\0'; i++) {
+        if (original[i] >= '0' && original[i] <= '9')
+            soloNumeros[in++] = original[i];
+        else
+            soloTexto[it++]   = original[i];
+    }
+    soloTexto[it]    = '\0';
+    soloNumeros[in]  = '\0';
+
+    cout << "  Original : " << original    << "\n";
+    cout << "  Texto    : " << soloTexto   << "\n";
+    cout << "  Número   : " << soloNumeros << "\n";
+}
 void problema10(){}
 void problema12(){}
 void problema14(){}
