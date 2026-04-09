@@ -1,7 +1,6 @@
-// ============================================================
+
 //  utils.cpp  -  Funciones de utilidad reutilizables
-//  Informatica II - Universidad de Antioquia
-// ============================================================
+
 
 #include "problemas.h"
 #include <iostream>
